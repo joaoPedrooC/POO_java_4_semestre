@@ -41,6 +41,64 @@ public class TimeVolei {
 
   // Parte dois do exercício / Exercício 03
 
+  public String RetornarMaiorJogador() {
+    double maiorAltura = this.TotalJogadores > 0 ? this.Jogadores[0].RetornarAltura() : 0;
+    int indiceMaiorJogador = 0;
+
+    for (int i = 0; i < this.TotalJogadores; i++) {
+      double alturaAtual = this.Jogadores[i].RetornarAltura();
+      
+      if (maiorAltura < alturaAtual) {
+        maiorAltura = alturaAtual;
+        indiceMaiorJogador = i;
+      }
+    }
+
+    return "O maior jogador é: " + this.Jogadores[indiceMaiorJogador].RetornarNome();
+  }
+
+  public String RetornarMaiorJogadorFiltroIdade(int idade) {
+    double maiorAltura = -1;
+    int indiceMaiorJogador = 0;
+
+    for (int i = 0; i < this.TotalJogadores; i++) {
+      double alturaAtual = this.Jogadores[i].RetornarAltura();
+      int idadeAtual = this.Jogadores[i].RetornarIdade();
+
+      if (maiorAltura < alturaAtual && idadeAtual > idade) {
+        maiorAltura = alturaAtual;
+        indiceMaiorJogador = i;
+      }
+    }
+
+    return maiorAltura > -1 ? "O maior jogador com mais de " + idade + " anos é: " + this.Jogadores[indiceMaiorJogador].RetornarNome()
+    : "Não há jogadores com mais de " + idade + " anos.";
+  }
+
+  public int RetornarQuantidadeJogadoresFiltrandoIdade(int idade) {
+    int quantidadeJogadores = 0;
+
+    for (int i = 0; i < this.TotalJogadores; i++) {
+      int idadeAtual = this.Jogadores[i].RetornarIdade();
+
+      quantidadeJogadores += idadeAtual == idade ? 1 : 0;
+    }
+
+    return quantidadeJogadores;
+  }
+
+  public int RetornarMaiorJogadorFiltroAltura(double altura) {
+    int quantidadeJogadores = 0;
+
+    for (int i = 0; i < this.TotalJogadores; i++) {
+      double alturaAtual = this.Jogadores[i].RetornarAltura();
+
+      quantidadeJogadores += alturaAtual > altura ? 1 : 0;
+    }
+
+    return quantidadeJogadores;
+  }
+
   public double CalcularMediaIdades() {
     double media = 0;
 

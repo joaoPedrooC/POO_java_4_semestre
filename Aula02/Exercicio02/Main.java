@@ -31,6 +31,35 @@ public class Main {
 
     System.out.println(time.RetornarMenorJogador());
 
+    // Parte dois do exercicio / Exercicio 03
+
+    System.out.println(time.RetornarMaiorJogador());
+
+    System.out.println("Informar uma idade para retornar o maior jogador mais velho que o informado: ");
+    String maiorJogador = time.RetornarMaiorJogadorFiltroIdade(scanner.nextInt());
+
+    System.out.println(maiorJogador);
+
+    System.out.println("Informe uma idade para retornar o número de jogadores com a idade informada: ");
+    int totalJogadoresFiltroIdade = time.RetornarQuantidadeJogadoresFiltrandoIdade(scanner.nextInt());
+    
+    System.out.println("O numero de jogadores com a idade informada é: " + totalJogadoresFiltroIdade);
+    
+    
+    
+    System.out.println("Informe uma altura para retornar o número de jogadores com a altura maior que a informada: ");
+    int totalJogadoresFiltroAltura = time.RetornarMaiorJogadorFiltroAltura(scanner.nextDouble());
+
+    System.out.println("O numero de jogadores maiores que o informado é: " + totalJogadoresFiltroAltura);
+
+
+    System.out.println("A média de idades de todos os jogadores é: " + time.CalcularMediaIdades());
+
+    System.out.println("Informar altura mínima para calcular a média: ");
+    double media = time.CalcularMediaIdades(scanner.nextDouble());
+
+    System.out.println("A média de idades dos jogadores com filtro de altura é: " + media);
+
     scanner.close();
   }
 }
