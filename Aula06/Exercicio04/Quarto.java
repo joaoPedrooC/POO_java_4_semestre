@@ -1,10 +1,8 @@
 package Aula06.Exercicio04;
 
 public class Quarto {
-  @SuppressWarnings("unused")
   private int numero;
   private String tipo;
-  @SuppressWarnings("unused")
   private Boolean reservado;
 
   public Quarto(int numero, String tipo, Boolean reservado) {
