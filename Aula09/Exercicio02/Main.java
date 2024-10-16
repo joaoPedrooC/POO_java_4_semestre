@@ -119,8 +119,7 @@ public class Main {
           scanner.nextLine();
           System.out.println("O numero da conta deve estar contido no intervalo [1-5].");
         }
-      }
-      if(op == 4) break;
+      } else if(op == 4) break;
     }
 
     scanner.close();
